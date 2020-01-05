@@ -1,0 +1,28 @@
+# -- Ruby Comment -- #
+=begin
+  anything in between is commented code
+  not popular
+=end
+Atom shorcut:
+  1. highlight section with SHIFT
+  2. CMD "/" to comment out entire block, repeat to uncomment
+
+  # ---Install Ruby on Mac ---#
+  RVM: Ruby Version Manager: rvm.io
+  \curl -sSL https://get.rvm.io | bash -s stable --rails
+
+  # --- using homebrew --- #
+    brew install Ruby # same result as rvm
+
+    # -- modify bash -- #
+    open ~/.bash_profile
+    source /Users/eparas3263/.rvm/scripts/rvm
+
+    # ---get ruby docs ---#
+    rvm docs generate-ri
+
+    # --- Install Atom and Atom Runner ---#
+Atom -> Preferences ->Settings->install->atom-Runner
+  CTRL+R: runs code
+
+  
