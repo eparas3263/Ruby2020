@@ -3,7 +3,8 @@
   anything in between is commented code
   not popular
 =end
-Atom shorcut:
+
+Atom shortcut:
   1. highlight section with SHIFT
   2. CMD "/" to comment out entire block, repeat to uncomment
 
@@ -21,8 +22,107 @@ Atom shorcut:
     # ---get ruby docs ---#
     rvm docs generate-ri
 
-    # --- Install Atom and Atom Runner ---#
-Atom -> Preferences ->Settings->install->atom-Runner
-  CTRL+R: runs code
+    # ---Install Atom and Atom Runner--- #
+    Atom -> Preferences ->Settings->install->Atom-Runner
+    CTRL+R: runs code
 
-  
+    # -- run Ruby from Terminal--- #
+    ruby <file.rb>
+    irb = interactive ruby
+
+# --- puts method --- #
+puts = output to screen, adds line break at end
+  Examples:
+  puts "Hello World";  # --- semicolon not required --- #
+  puts 5       # --- number --- #
+  puts 3.14159 # --- floating point number --- #
+  puts  # --- adds a line break --- #
+
+# --- print method --- #
+print = output to screen, but doesn't add line break at end
+
+# --- p method --- #
+p = displays literal output
+  examples: puts "Hello World" -> Hello World
+            p  "Hello World" -> "Hello World"
+            " Hi there, this is a\nline break"
+
+# ---Basic Aritemetic.rb--- #
+examples:
+   p 1 + 4 -> 5
+   p "School" + "Bus" -> SchoolBus
+   p 10/5 -> 2
+   p 12/5 -> 2   # --integer result only--- #
+   p 12/5.0 -> 2.4  # ---floating point result--- #
+      p 12.0/5
+      p 12.0/5
+      p 0.5/2
+   p 3 ** 3 -> 27 # ---exponent--- #
+   p 5 % 2 -> 1 # ---modulo (remainder)--- %
+
+# ---variables--- #
+examples:
+  name = "Boris"
+  last_name ="Badanov"
+  cartoon = true
+  age = 97
+- spaces not allowed, use underscores
+- case sensitive
+- do not use Ruby reserved key words as variable names
+
+# ---parallel variable assignments--- #
+example:
+a, b, c = 10, 20, 30 # --- assigns values to multiple variables in order entered
+---
+a, b = 1 , 2
+a, b = b, a # ---swaps values between variables--- #
+---
+p a, b, c -> outputs values with line breaks
+print a, b, c -> 102030 # ---no line breaks or spaces--- #
+
+# ---Constants--- #
+examples:
+    NAME = "constant value" #---uppercase---#
+    PI = 3.141519
+      # ---Ruby allows changing values of constants, gives warning--- #
+
+# ---Object Methods--- #
+examples:
+  p "Hello world".length -> 11 # ---len function--- #
+  p "Hello world".upcase -> "HELLO WORLD"
+---
+greetings = "hello World"
+greetings.length -> 11
+greetings.upcase -> "HELLO WORLD"
+p 10.next -> 11    # ---adds 1 to current value--- #
+p -1.next -> 0
+puts "Hello World".inspect ->"Hello World"
+
+# ---Return vales and nil---#
+nil = obj that represents nothing
+
+# --String interpolation--- #
+examples:
+  p 5.to_s -> "5" # ---converts to string--- #
+  ---
+  name = "Hera"
+  p "Hello #{name}, how are you?"
+  ---
+  age = 25;
+  p "I am " + age.to_s + " dog years old."
+  p "I am #{age} dog years old."  # ---cleaner method--- #
+  p "Adding 2 +2 = #{2+2}"
+  p "In 5 years I will be #{age +5}"
+
+  # --- gets Method and champ Method --- #
+  gets = get string from User and adds line break
+  chomp = removes new line character
+  example:
+    name = gets.chomp
+    p "Hello #{name}. Now go away."
+  ---
+  puts "Enter your name: "
+  name = gets.chomp
+  puts "Enter your age: "
+  age = gets.chomp.to_i   # ---converts string to integer--- #
+  p "Hello #{name}. You are #{age} years old? Go away, old fart."
