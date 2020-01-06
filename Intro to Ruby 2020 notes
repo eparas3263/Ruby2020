@@ -126,3 +126,236 @@ examples:
   puts "Enter your age: "
   age = gets.chomp.to_i   # ---converts string to integer--- #
   p "Hello #{name}. You are #{age} years old? Go away, old fart."
+
+  # ---Numbers and Booleans--- #
+  Examples:
+    p 5.class -> Finum (Fixed number)
+    p 999999999999999.class -> Bignum (Big Number)
+    p 5 < 10 -> true
+    p 20 < 5 -> false
+
+
+# ---String to Number Conversion--- #
+Examples:
+  str ="5"
+  p str.to_i.class -> Finum
+  p str.to_f.class -> floating
+  ---
+  number = 10
+  p number.to_s.class -> string
+  p number.to_f.class -> float
+  ---
+  pi = 3.14
+  p pi.to_i -> 3
+  p pi.to_i.class -> Fixnum
+
+  # ---Odd/Even--- #
+  Examples:
+  p 10.odd? -> false
+  p 10.even? -> true
+  p 2.99.odd? -> error
+
+  # ---Equality/Inequality---#
+  Examples:
+  p 10 == 10 -> true
+  p 10 != 5 -> true
+  p 10 != 10 -> false
+
+  # ---Less than/Greater than--- #
+  Examples:
+  p 1 < 8 -> true
+  p 1 <= 5 -> true
+  p 5 >= 10 -> false
+
+  # ---Arithmetic Methods/Basic Arguments--- #
+  Examples:
+  p 1.next()  #--- parenthesis optional, unless arguments required)
+  +, -, *, %, /
+  p 10.div(5) -> 2
+
+  # ---Object Methods with Parameters--- #
+  Examples:
+  3.between?(1, 5) -> true
+  'cat'.between?('ant', 'dog') -> true  # ---alphabetical sort---#
+  'gnu'.between?('ant', 'dog') -> false
+
+  # --Float Methods--- #
+  Examples:
+  p 10.5.floor -> 10
+  p 10.5.ceil -> 11
+  p 3.14159.round -> 3
+  p 3.6.round -> 4
+  p 3.141519.round(2) -> 3.14 #--- argument = # digits
+  p 35.67.abs -> 35.67
+  p -35.67.abs -> 35.67
+
+  # ---Assignments/Reassignments---#
+  Examples:
+  a = 10
+  a = a + 5 -> 15
+  a += 5 -> 15  # ---refactored code--- #
+  ---
+  b =50
+  b -= 10 -> 40
+
+  # ---Blocks with.times Method--- #
+  - block is not an Object
+  Examples:
+  5.times {puts "Everything is awesome!"} # ---prints 5x--- #
+  ---
+  3.times do
+     puts "Awesome-sauce!"        # ---multiple lines--- #
+     puts " Poopie."
+  end
+  ---
+  3.times do |count|    # ---block variable---#
+    puts "loop number #{count}"   # ---starts at zero--- #
+    puts "Looper"
+   end
+  ---
+  5.times { |count| puts "Everything is awesome! #{count}"} # ---add block variable--- #
+  ---
+  10.times do |count|    # ---block variable---#
+    puts "multiples of 3: #{3 * (count +1)}"
+    end
+
+    # ---.upto/.downto Methods--- #
+    Examples:
+    5.downto(1)    # ---counts down 5 to 1--- #
+    5.downto(1) {|count| puts "Countdown: #{count}"}
+    ---
+    5.downto(0) do |i|
+      p "Number: #{i}"
+    end
+    --
+    5.upto(10) do |i|
+          p "Number: #{i}"
+          end
+
+# ---.step Method--- #
+Examples:
+  1.step(100, 5) {|i| puts i}    #---end #, step size--- #
+  ---
+  0.step(85, 7) do |i|
+    puts "Step 7: #{i}"
+  end
+
+# ---Strings--- #
+Examples:
+  puts "This is a String"    # ---double quotes--- #
+  name = "Hera"
+  age = 10
+  puts name, age #--prints both variables
+  ---
+  name = String.new("Hera")  # ---another way to create string var--- #
+
+# ---Multi-line String--- #
+Examples:
+  words = <<MLS
+   multi-line string
+   no quotes required.
+
+        Tabs!
+
+  MLS
+
+# ---Escape Characters--- #
+Examples:
+puts "Hera says 'go away' to everyone"   # ---note position of quotes--- #
+puts 'Hera says "wut" to everyone'
+puts "Hera says "zzz" to everyone"  # ---will crash Ruby--- #
+puts "Hera says \"zzz\" to everyone."  # ---escape characters \" will work--- #
+puts 'Hera says \'woof\' to everyone.' # ---same result--- #
+---
+puts "Add a line break \n right here."
+puts "\tGive me a tab."
+puts "Hello\nWorld"  # --2x quotes required for escape chars--- #
+puts 'Hello\nWorld'  # ---single quotes won't work--- #
+
+# ---Equality/Inequality with Strings--- #
+Examples:
+a = "Hello"
+b = "hello"
+c = "Hello"
+
+p a == b -> false
+p a == c -> true
+p b == c -> false
+---
+p "Apple" < "Banana" ->true   # ---alphabetical sort---#
+p "A" < "a" -> true
+
+# ---Concatenate Strings--- #
+Examples:
+fn ="Carlos"
+ln ="Spiceywiener"
+
+p fn + ln -> CarlosSpiceywiener  # ---no spaces---"
+fn += fn + ln ->  "CarlosSpiceywiener"
+p fn.concat(ln) -> # ---same result--- #
+P fn << ln ->      # ---same result (shovel operator
+---
+fn.prepend(ln) -> SpiceywienerCarlos   # ---overwrites--- #
+
+# ---length and size Method--- #
+Examples:
+  a.length    # ---returns number of chars in string--- #
+  b.size      # ---same result--- #
+
+# ---Extract Single Chars from Strings--- #
+Examples:
+    free_text = "A long time ago, in a galaxy far, far, away..."
+    free_text. length
+    p free_text[3] -> o  # ---index position starts at zero---#
+    p free_text.slice(3) -> same result
+    p free_text[-4] -> # ---start from end of string---#
+
+# --Extract Multiple Chars from String--- #
+Examples:
+  p story [5, 4]    # ---[index start, # of chars to extract]--- #
+  p story.slice (5,4) -> same result
+  p story[-7, 5]   # ---start from end of string--- #
+  p story.slice(-7, 5) -> same result
+
+# ---Extract Multiple Chars with Range--- #
+Examples:
+  p story[27..39]  # ---index start..include index finish (..)--- #
+  p story.slice)27...39) # ---do not include index finish (...)--- #
+  p story[25..-9] # --index start..start from end of string of end index---#
+  p story.slice(25..-9) -> same result
+
+# ---Overwrite Chars in Strings--- #
+Examples:
+  story[0] ="p"    # ---changes char at index 0 to "p"--- #
+  story[7, 4] = "new text"
+  story[7..10] = "even newer text"
+
+# ---Case Methods--- #
+Examples:
+  text.capitalize -> capitalize only first char, lowercase everything else
+  text.capitalize.class -> String
+  text.upcase -> # ---ALL CAPS--- #
+  text.downcase -> # ---lowercase--- #
+  text.swapcase -> # ---switch cases per char--- #
+
+  # ---Reverse Method--- #
+  Examples:
+    text.reverse   # ---reverses order of text-- #
+
+# ---Bang Method--- #
+Examples:
+  - modifies or mutates
+  word.capitalize   # ---doesn't save modification--- #
+  word = word.capitalize  # ---saves new state--- #
+  word.capitalize! ->same result
+  word.upcase! # --saves new state--- #
+
+# ---.include? Method--- #
+Examples:
+    name.include?("S")  # ---if "S" included in string -> true--- #
+
+# ---.empty? and .nil? Methods--- #
+Examples:
+  text.empty? # --if len=0 then true--- #
+  text.nil? # ---if string = nil then true--- #
+  
