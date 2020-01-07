@@ -358,4 +358,182 @@ Examples:
 Examples:
   text.empty? # --if len=0 then true--- #
   text.nil? # ---if string = nil then true--- #
-  
+
+# ---07 JAN 2020---#
+
+# ---Conditionals--- #
+Examples:
+  if Condition
+    # do stuff
+  end
+---
+if Conditional
+  # do stuff
+elseif conditional-2
+  # do more stuff
+end
+---
+if conditional
+  # do stuff
+elseif conditional
+  # do stuff
+else
+  # do stuff if all else fails
+end
+# ---Multiple conditionals--- #
+Example:
+  if conditional && conditional   # ---AND--- #
+    # do stuff
+  end
+---
+  if conditional || conditional   # ---OR--- #
+    # do stuff
+  end
+---
+# ---Parentheses and Precendence--- #
+Examples:
+  if (conditional && conditional) || conditional
+    # do stuff
+  end
+---
+# ---Nested If Statements--- #
+Example:
+  if conditional
+    if conditional #2
+     # do stuff
+    elseif conditional
+      # do stuff
+    elseif conditional
+      # do stuff
+    end
+  end
+
+  # ---.respond_to?--- #
+  Example:
+    num = 10000
+    p num.respond_to?("next")   # ---does this object respond to method--- #
+     -> true
+---
+    p num.respond_to?("length") -> false
+    p num.respond_to?(:length)  -> same result
+---
+# ---Ternary operator--- #
+Example:
+  condition to evaluate ? "Result if True": "Result if False"
+  puts 1 < 2 ? "Yes" : "Nope"
+
+# ---Default or Operational Parameters--- #
+Example:
+  def make_phone_call(number, international_code = 1, area_code = 415)
+    # do stuff                               # ---default vaules--- #
+  end
+
+# ---Call methods--- #
+Example:
+    def add(a, b)
+      a + b
+    end
+
+    def sub(a, b)
+        a - b
+    end
+
+    def multiply(a,b)
+          a*b
+    end
+
+    def calculator (a, b, operation ="add")
+      if operation == "add"
+        add (a,b)
+      elseif operation == "subtract"
+          subtract(a,b)
+      elseif operation == "multiply"
+            multiply(a,b)
+      else
+        "Wrong."
+      end
+    end
+
+# ---Methods and Conditionals--- #
+# ---Case--- #
+Example:
+  def rate_my_app(rating)
+    case rating
+    when "Awesome"
+      # do stuff
+    when "Meh"
+      # do stuff
+    when "Blows", "Sucks", "Crap"    # ---multiple criteria--- #
+      # do stuff
+   else
+     # do something when all else fails
+  end
+
+  puts rate_my_app("Blows")
+  ---
+
+  def calc_grades(grade)    # ---range example--- #
+    case grade
+    when 90..100
+      "A"
+    when 80..89
+      "B"
+    when 70..79
+      "C"
+    else
+    "F"
+  end
+end
+# ---refactored code--- #
+def calc_grades(grade)    # ---range example--- #
+  case grade
+  when 90..100  then "A"
+  when 80..89   then "B"
+  when 70..79   then "C"
+  else "F"
+  end
+end
+
+# ---Negation witn !--- #  # ---NOT--- #
+Example:
+  !true = False
+  !!false = false
+
+# ---unless Keyword--- #
+Example:
+    unless password =="booger"  # ---execute if False--- #
+      puts "Denied!"
+    else
+      puts "Allowed"
+    end
+
+# ---while--- #
+Example:
+  i =1
+  while i < 10
+    # do stuff
+    i += 1     # increment loop
+  end
+
+# ---until--- #
+Example:
+  i = 1
+  until i > 9
+    # do stuff
+    i += i
+  end
+
+# ---Statement/Inline Modifiers--- #
+Example:
+      number = 5000
+      puts "Yuuuge!" if number > 2500   # ---refactored IF statement--- #
+      puts "Yuuuge!" if number > 2500 || conditional
+      puts "No!" unless x >10
+
+# ---Conditional Assignment--- #
+Example:
+  y =nil
+  y ||=5 -> y is assigned 5 since first y value is nil
+  ---
+  y =5
+  y||=10 -> fails since first value of y is not nil
