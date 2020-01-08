@@ -28,7 +28,7 @@ Atom shortcut:
 
     # -- run Ruby from Terminal--- #
     ruby <file.rb>
-    irb = interactive ruby
+    irb = interactive ruby
 
 # --- puts method --- #
 puts = output to screen, adds line break at end
@@ -359,53 +359,6 @@ Examples:
   text.empty? # --if len=0 then true--- #
   text.nil? # ---if string = nil then true--- #
 
-<<<<<<< HEAD
-# ---Intro to Methods--- #
-Examples:
-    - DRY: Don't Repeat Yourself!
-    - Methods are designed to be reused.
-
-def destroy_death_star
-  # ---do stuff here--- #
-  # ---do more stuff-- #
-end
-
-destroy_death_star    # ---call method (function)--- #
-
-# ---Local Variables--- #
-  - aka scope
-  - if defined in method, it is local to the method (not global)
-
-# ---Parameters and Arguments--- #
-Examples:
-    def destroy_death_star (callsign)
-      puts "#{callsign}, standing by."
-    end
-
-destroy_death_star("Red Five")
-
-# ---Return Values--- #
-Examples:
-
-def add_two_numbers(num1, num2)
-  puts"the answer is: "
-  return num1 + num2
-end
-
-p add_two_numbers(6,7)
----
-def return_guess
-  puts "what will happen"
-end
-
-result =return_guess
-p result
-
-  - puts always return nil
-
-# ---If statement--- #
-=======
->>>>>>> 838f0a9d843957baf16b37b3b4c7099cc038c61f
 # ---07 JAN 2020---#
 
 # ---Conditionals--- #
@@ -584,112 +537,3 @@ Example:
   ---
   y =5
   y||=10 -> fails since first value of y is not nil
-<<<<<<< HEAD
-
-# ---Ranges--- #
-Example:
-  nums = 1..5  # ---contains all objects within range, including last value-- #
-  nums = 1...5 # 5 is excluded (3 dots)
-  nums.first  = 1
-  nums.last = 5  # ---regardless of ... dots--- #
-  nums.first(4) = 1, 2, 3, 4
-  nums.last(1) = 5
-
-# ---Alphabetical Ranges--- #
-Example:
-    puts 1..10.first(3) -> throws error
-    puts (1..10).first(3) -> works
-    ---
-    alphabet ="a".."z"
-    puts alphabet.first(5)
-
-# ---.size Method---#
-Example:
-  numbers =144..665
-  p numbers.size = total number of elements in Range including last number
-
-  --
-  numbers = 23...78
-  p numbers.size = total will exclude last number in range
-
-# --Check value exists in Range with .include? Method--- #
-Example:
-    dataset ="a".."m"
-    dataset.include?("g") = True   # ---remember the dots--- #
-    ---
-    dataset = -14..56
-    dataset.include?(88) = false
-
-# ---Random number generation--- #
-Example:
-  rand.round(x)   # ---rounds to x (e.g. 2) decimal places--- #
-  rand(100) = 0 to 99, not 100
-  rand(50..60) = 50 to 60
-  rand (0...100) = 0 to 99
-<<<<<<< HEAD
-=======
->>>>>>> 838f0a9d843957baf16b37b3b4c7099cc038c61f
-=======
-
-# ---Arrays--- #
-Example:
-    []  # ---syntax--- #
-    [].class = array
-    numbers =[2, 4, 6, 8, 9]
-    puts numbers
-    p numbers
-    print numbers
-    ---
-    toys =["GI joe", "Star Wars", "Clue"]
-    stuff =[ 6, "dirt", -234.3, "nerfherder"]
-    ---
-    # ---arrays within arrays--- #
-    students =[ ["sam", "dave","hera"], ["jyn", "sabine", "cara"]]
-    ---
-    names = %w[]   # ---no quotes or commas needed---#
-    names = %w[HAL, Friday, Jarvis]
-    ---
-    Array.new # ---creates new array--- #
-    Array.new(5)  # ---total number of items in array--- #
-    Array.new(10, true)   # ---2nd argument = initial value--- #
-    ---
-# ---index positions--- #
-Example:
-      <array>.length = total number of elements in arrays
-      fruits.length     # ---indexes start at 0--- #
-      fruits[5]         # ---retrieves element at index 5--- #
-      fruits[fruits.length -1]  # ---retrieve last element--- #
-      fruits[-1]  # ---start from end of array, x = index from last--- #
----
-# ---.fetch Method--- #
-Example:
-  names.fetch(2)
-  names.fetch(100)   # ---will throw error if doesn't exist---#
-  names.fetch(100, "You failed")    # ---default value if fetch failed--- #
-# ---extract sequential items from array--- #
-Example:
-    numbers = [4,7,2,77,0,2,4]
-    numbers[2, 4]   # ---start at 2, pull out 4 elements; creates new array--- #
-    numbers[4, 100] # ---will stop if not enough elements--- #
-    numbers[3..6]  # ---start/finish indexes inclusive--- #
-    numbers[3...6] # ---start/finish indexes non-inclusive--- #
-
-# ---Access Multiple Arrays with .values_at--- #
-Example:
-  channels.values_at(4)       # ---pull out elements at index--- #
-  channels.values_at(0, 2, 4) # ---non-sequential index--- #
-
-# ---.slice Method--- #
-Example:
-    numbers.slice(3)   # ---extract element at index--- #
-    numbers.slice(2, 3)
-    numbers(4..8)
-    numbers(3...6)
-
-# ---mutate arrays--- #
-Example:
-  fruits[1] ="strawberry"   # ---replace element value at index--- #
-
-# ---.length, .size, .count Methods--- #
-Example:
->>>>>>> 9fcdf16576f0029cf3aea2bb5cbc1ec70d1e8c4f

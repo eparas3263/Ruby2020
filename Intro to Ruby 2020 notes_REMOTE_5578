@@ -626,10 +626,6 @@ Example:
   rand(100) = 0 to 99, not 100
   rand(50..60) = 50 to 60
   rand (0...100) = 0 to 99
-<<<<<<< HEAD
-=======
->>>>>>> 838f0a9d843957baf16b37b3b4c7099cc038c61f
-=======
 
 # ---Arrays--- #
 Example:
@@ -692,4 +688,3 @@ Example:
 
 # ---.length, .size, .count Methods--- #
 Example:
->>>>>>> 9fcdf16576f0029cf3aea2bb5cbc1ec70d1e8c4f
