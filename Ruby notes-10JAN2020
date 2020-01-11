@@ -1,0 +1,47 @@
+10 JAN 2020 Notes
+
+# ---Arrays Bonus Methods--- #
+Object Pointers and Object Copies
+  - all Ruby objects live on a heap
+  - object_id: returns obj location in memory
+    examples:
+      a.object_id
+      a.dup                    # ---creates duplicate, with different obj location--- #
+---
+Splat arguments                # ---number of arguments unknown--- #
+Example:
+  def sum(*numbers)            # ---accepts 0-many arguments--- #
+    sum =0
+    numbers.each {|num| sum += num}
+  end
+.any? .all? Methods            # ---True is any or all values match criteria--- #
+Example:
+  [].any? do |number|
+    number.even?
+  end
+  [].all?{|n| n.odd?}
+---
+.find .detect Methods         # ---return first value that matches criteria--- #
+Example:
+  words.find{|word| word.length >8}
+  words.detect{|word| word.length > 8}
+---
+.uniq Method                   # ---returns new array with no dupes--- #
+.compact Method                # ---returns new array with no nil values--- #
+.inject  and .reduce Method    # ---accumulates each element in array--- #
+Example:
+  [].reduce(0) do |previous, current|
+    previous + current
+  end
+---
+.flatten Method                # ---combines nested arrays into one--- #
+.zip Method                    # ---combines arrays based on common index--- #
+.sample Method                 # ---pulls out 1+ random element from array--- #
+Array Multiple with Asterisk   # ---replicates all array elements specified times--- #
+Union - Combine Arrays with Dedupe  # ---merge arrays with no dupes--- #
+Example:
+  [array 1].|([Array 2])
+Remove Array Dupe Items from Other arrays  # ---remove specified elements from array--- #
+Example:
+  [a, b, c, d, e, 1, 2, 3] - [d, 3]   # ---remove d and 3 from array--- #
+Array Intersection with Ampersand     # ---returns only matching elements from 2+ arrays--- #
